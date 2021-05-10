@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    color: #edf0f1;
+    background-color: #24252a;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+#project-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#header h1 {
+    font-size: 32px !important;
+}
+
+#footer h1 {
+    font-size: 26px !important;
+}
+
+#aside p {
+    font-size: 8px;
+}
+
+.links li, .links a, #header h1, #footer h1 {     /*added footer stuff*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+    
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+/*aside container stuff*/
+
+aside {
+    text-align: center;
+    padding: 10px 10%;
+}
+
+/*footer container stuff*/
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+.footer-nav {
+    order: 1;
+    margin-right: auto;
+}
+
+.links li:nth-child(1) {
+    padding: 0px 20px 0 0;
+}
+
+#footer h1 {
+    order: 2;
+}
+
+/*end footer stuff here*/
+
+#header h1 {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    /*fixes vertical centering the same way as the button*/
+    padding: 6px 20px 10px 0;
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    margin-left: 20px;
+    /*adjusts the centering for all lowercase text*/
+    padding: 6px 25px 10px 25px;
+    /**/
+    background-color: rgba(0,136,169,1);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+button:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
+#header h1:hover, #footer h1:hover {    /*added footer stuff*/
+    color: #0088a9;
+}
+
+/*GRID work will go here and anything added to other classes
+  will be commented "GRID"*/
+
+body {
+/*BODY ELEMENT SIZE*/
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-gap: 10px;
+    /*middle column should not stay 60rem max width--
+    --this is for testing. 86rem max is default--*/
+    grid-template-columns: 1fr minmax(0, 60rem) 1fr;
+    grid-template-rows: 75px 1fr 50px;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+#header {
+    grid-area: header;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#main {
+    grid-area: main;
+    
+
+}
+
+#aside {
+    grid-area: aside;
+    background-color: #0088a9;
+}
+
+
+/*//////////////////////////////////////////
+/////////////PAGE//CONTENT//////////////////
+//////////////////////////////////////////*/
+
+
+.centered {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    height: 100%;
+}
+.projects {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: .5em;
+}
+
+.projects {
+    background: none;
+    
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    
+}
+
+.single-project {
+    
+    background-color: #0088a9;
+    height: 100%;
+    
+    flex: 0 1 3em;
+    cursor: pointer;
+}
+
+.single-project h2 {
+    font-size: 2em;
+    color:#0088a9;
+    margin-bottom: 2em;
+}
+
+.single-project p {
+    font-size: .75em;
+}
+
+.single-project img {
+    display: none;
+}
+
+.single-project .description, .single-project .snippet {
+    display: none;
+}
+.single-project div {
+    
+    height: 100%;
+    width: 100%;
+    background: none;
+    padding: .25em .25em .25em 1em;
+}
+
+.selected-project {
+    box-sizing: border-box;
+    background-color: #24252a;
+    border: 2px solid #edf0f1;
+    flex: 0 1 calc(100% - 6em);
+    display: flex;
+    gap: 1em;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 2em;
+    
+    
+    
+}
+
+.selected-project .project-title {
+    display: none;
+}
+
+.selected-project .description, .selected-project .snippet {
+    display: inline-block;
+    margin: 2em;
+}
+
+.selected-project .description {
+    flex: 0 1 60%;
+
+    
+    
+}
+
+.selected-project .snippet {
+    flex: 0 2 40%;
+    
+}
+
+.selected-project img {
+    display: inline-flex;
+    width: 90%;
+}
+
+.selected-project a {
+    text-decoration: none;
+    
+    color: #0088a9;
+
+}
+
+.selected-project a h2 {
+    font-size: 1.5em;
+}
+
+.selected-project a h2:hover {
+    color: #edf0f1;
+}
+
+
+
+
+
+

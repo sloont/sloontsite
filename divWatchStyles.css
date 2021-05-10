@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+    color: #edf0f1;
+    background-color: #24252a;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+#project-container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#header h1 {
+    font-size: 32px !important;
+}
+
+#footer h1 {
+    font-size: 26px !important;
+}
+
+#main h2 {
+    font-size: 16px !important;
+}
+
+#main p {
+    font-size: 12px;
+}
+
+#aside p {
+    font-size: 8px;
+}
+
+.links li, .links a, #header h1, #footer h1 {     /*added footer stuff*/
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #edf0f1;
+    text-decoration: none;
+    
+    
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+/*aside container stuff*/
+
+aside {
+    text-align: center;
+    padding: 10px 10%;
+}
+
+/*footer container stuff*/
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+}
+
+.footer-nav {
+    order: 1;
+    margin-right: auto;
+}
+
+.links li:nth-child(1) {
+    padding: 0px 20px 0 0;
+}
+
+#footer h1 {
+    order: 2;
+}
+
+/*end footer stuff here*/
+
+#header h1 {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+    /*fixes vertical centering the same way as the button*/
+    padding: 6px 20px 10px 0;
+}
+
+.links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    margin-left: 20px;
+    /*adjusts the centering for all lowercase text*/
+    padding: 6px 25px 10px 25px;
+    /**/
+    background-color: rgba(0,136,169,1);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+
+}
+
+button:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
+#header h1:hover, #footer h1:hover {    /*added footer stuff*/
+    color: #0088a9;
+}
+
+/*GRID work will go here and anything added to other classes
+  will be commented "GRID"*/
+
+body {
+/*BODY ELEMENT SIZE*/
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-gap: 10px;
+    /*middle column should not stay 60rem max width--
+    --this is for testing. 86rem max is default--*/
+    grid-template-columns: 1fr minmax(0, 60rem) 1fr;
+    grid-template-rows: 75px 1fr 50px;
+    grid-template-areas: 
+    "header header header"
+    "main main main"
+    "footer footer footer";
+}
+
+#header {
+    grid-area: header;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+#main {
+    grid-area: main;
+    
+
+}
+
+#aside {
+    grid-area: aside;
+    background-color: #0088a9;
+}
+
+
+p {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+
+
+/*////////////////////////////////////////
+/////////////CLOCK////////////////////////
+////////////////////////////////////////*/
+
+/*container styles*/
+
+
+/*header styles*/
+
+#clockHeader {
+    
+    padding-top: .5em;
+    font-size: 1em;
+    font-family: "Noto Sans JP", sans-serif;
+    
+    font-weight: 600;
+    color: #edf0f1;
+    font-size: 1.5rem;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#clockHeader h3 {
+    margin-top: 1em;
+    color: rgba(0,136,169); 
+}
+
+.clock {
+    height: 10rem;
+    width: 34rem;
+    display: grid;
+    background: #24252a;
+    grid-template-columns: 3fr 3fr 1fr 3fr 3fr 1fr 3fr 3fr;
+    grid-template-rows: 1fr;
+    gap: .7rem .7rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.colon {
+    height:auto;
+    background: #24252a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dot {
+    width: 70%;
+    height: 0;
+    padding-bottom: 70%;
+    background: #edf0f1;
+    
+}
+
+.lcd-screen {
+    height: auto;
+    background: #24252a;
+    position: relative;
+}
+
+.lcd-bar {
+    background: #edf0f1;
+    position: absolute;
+    z-index: 2;
+}
+
+.lcd0 {
+    height: 10%;
+    width: 80%;
+    top: 5%;
+    left: 10%;
+}
+
+.lcd1 {
+    height: 10%;
+    width: 80%;
+    top: 45%;
+    left: 10%;
+    background: #24252a;
+}
+
+.lcd2 {
+    height: 10%;
+    width: 80%;
+    bottom: 5%;
+    left: 10%;
+}
+
+.lcd3 {
+    height: 45%;
+    width: 20%;
+    top: 5%;
+    left: 10%;
+}
+
+.lcd4 {
+    height: 45%;
+    width: 20%;
+    top: 5%;
+    left: 70%;
+}
+
+.lcd5 {
+    height: 45%;
+    width: 20%;
+    top: 50%;
+    left: 10%;
+}
+
+.lcd6 {
+    height: 45%;
+    width: 20%;
+    top: 50%;
+    left: 70%;
+}
+
+/*list styles*/
+#clock-nav {
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+
+#clock-nav ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    
+}
+
+#clock-nav li {
+    display: inline-block;
+}
+
+
+/*button styling*/
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+   
+    margin-top: 13px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    
+}
+
+.bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 7.125em;
+    height: 3.125em;
+    background-color: rgba(0,136,169,1);
+    display: block;
+
+   
+}
+
+.top {
+    
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 7em;
+    height: 3em;
+    background: none;
+    border: 2px solid #edf0f1;
+
+    
+    
+}
+
+.label {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+    color: #edf0f1;
+    font-size: 1rem;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background: none;
+
+    padding: 1em;
+
+}
+    
+
+.button:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: #edf0f1;
+    -webkit-transition: all .20s ease-out;
+    -moz-transition: all .20s ease-out;
+    -o-transition: all .20s ease-out;
+    transition: all .20s ease-out;
+}
+
+.button:hover .label {
+    color: rgba(0,136,169,1);
+    -webkit-transition: all .20s ease-out;
+    -moz-transition: all .20s ease-out;
+    -o-transition: all .20s ease-out;
+    transition: all .20s ease-out;
+}
+
+.button-border {
+    position: absolute;
+    background-color: rgba(0,136,169,1);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.button:hover .button-border-left, .button:hover .button-border-right {
+    height: calc(100% + 2px);
+}
+
+.button:hover .button-border-top, .button:hover .button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+.button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0px;
+    height: 2px;
+}
+
+.button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+}
+
+/*class for if the button was the most recent click*/
+
+.recentClick .bottom{
+    left: 0;
+    top: 0;
+    background-color: #edf0f1;
+}
+
+.recentClick .label {
+    color: rgba(0,136,169,1);
+}
+
+.recentClick .button-border {
+    background-color: rgba(0,136,169,1);
+}
+
+.recentClick .button-border-bottom, .recentClick .button-border-top {
+    width: calc(100% + 2px);
+}
+
+.recentClick .button-border-right, .recentClick .button-border-left {
+    height: calc(100% + 2px);
+}
