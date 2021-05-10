@@ -204,11 +204,48 @@ body {
 
 .single-project {
     
+    position: relative;
     background-color: #0088a9;
     height: 100%;
     
-    flex: 0 1 3em;
+    flex: 0 1 33%;
     cursor: pointer;
+}
+
+.single-project:hover {
+    background: none;
+    
+    
+}
+
+.single-project-clone-divwatch {
+    content: "";
+    background: url(./clockGutsSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
+.single-project-clone-schedule {
+    content: "";
+    background: url(./generatorSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
 }
 
 .single-project h2 {
@@ -240,7 +277,7 @@ body {
     box-sizing: border-box;
     background-color: #24252a;
     border: 2px solid #edf0f1;
-    flex: 0 1 calc(100% - 6em);
+    flex: 0 0 calc(100% - 6em);
     display: flex;
     gap: 1em;
     flex-wrap: nowrap;
@@ -249,6 +286,10 @@ body {
     
     
     
+}
+
+.selected-project .single-project-clone {
+    display: none;
 }
 
 .selected-project .project-title {
@@ -292,6 +333,9 @@ body {
     color: #edf0f1;
 }
 
+.selected-project:hover {
+    background: none !important;
+}
 
 
 
