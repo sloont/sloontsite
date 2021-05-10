@@ -208,14 +208,17 @@ body {
     background-color: #0088a9;
     height: 100%;
     
-    flex: 0 1 33%;
+    flex: 0 1 50%;
     cursor: pointer;
 }
 
 .single-project:hover {
     background: none;
-    
-    
+       
+}
+
+.single-project .project-title {
+    font-size: 2em;
 }
 
 .single-project-clone-divwatch {
@@ -333,8 +336,8 @@ body {
     color: #edf0f1;
 }
 
-.selected-project:hover {
-    background: none !important;
+.selected-project .single-project-clone-divwatch, .selected-project .single-project-clone-schedule {
+    display: none;
 }
 
 
