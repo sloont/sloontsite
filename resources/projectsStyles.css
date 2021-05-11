@@ -205,10 +205,10 @@ body {
 .single-project {
     
     position: relative;
-    background-color: #0088a9;
+    background-color: rgba(0,136,169,.7);;
     height: 100%;
     
-    flex: 0 1 50%;
+    flex: 0 1 33%;
     cursor: pointer;
 }
 

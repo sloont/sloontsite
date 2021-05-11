@@ -27,7 +27,7 @@ const updateDigit = (parentId, num) => {
     for (let i = 0; i < 7; i++) {
         const mask = 0b1 << i;
         if (lcdBin & mask) {
-            parentElement.getElementsByClassName("lcd-bar")[i].style["background"] = "#edf0f1"; //change to "lcd" with actual index
+            parentElement.getElementsByClassName("lcd-bar")[i].style["background"] = "#edf0f1"; 
             parentElement.getElementsByClassName("lcd-bar")[i].style["z-index"] = 2;
         } else {
             parentElement.getElementsByClassName("lcd-bar")[i].style["background"] = "#24252a";
