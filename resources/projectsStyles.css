@@ -251,6 +251,21 @@ body {
     padding: 0 !important;
 }
 
+.single-project-clone-snake {
+    content: "";
+    background: url(./snakelistsSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
 .single-project h2 {
     font-size: 2em;
     color:#0088a9;
