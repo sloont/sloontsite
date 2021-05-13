@@ -4,9 +4,6 @@
     margin: 0;
     padding: 0;
 
-    color: #edf0f1;
-    background-color: #24252a;
-
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -288,13 +285,12 @@ main {
 #game-over {
     display: none;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left: -2px;
+    top: -2px;
 }
 
 .opacity-background {
-    position: relative;
+    position: absolute;
     background: rgba(0, 0, 0, 0.5);
     height: 332px;     
     width: 332px;

@@ -227,9 +227,6 @@ class Game {
         document.addEventListener("keydown", this.listener);
 
         setTimeout(() => {this.refresh()}, this.timeout);
-
-        //this doesn't work it fires at the beginning of the game
-        //console.log("Good Job! Your score was " + this.score);
         
     }
     

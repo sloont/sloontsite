@@ -1,4 +1,4 @@
-
+const gameOver = '<div id="game-over"><div class="opacity-background"><div class="game-over-text">YOU  DIED</div></div></div>';
 
 const createGameboard = () => {
     
@@ -33,7 +33,7 @@ const createGameboard = () => {
 
 const resetGame = () => {
     
-    document.getElementById("game").textContent = '';
+    document.getElementById("game").innerHTML = gameOver;
     try {
         document.getElementById("game-over").classList.remove("visible");
     } catch (TypeError) {};

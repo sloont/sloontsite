@@ -306,7 +306,7 @@ body {
     
 }
 
-.selected-project .single-project-clone {
+.selected-project .clone {
     display: none;
 }
 
@@ -351,9 +351,7 @@ body {
     color: #edf0f1;
 }
 
-.selected-project .single-project-clone-divwatch, .selected-project .single-project-clone-schedule {
-    display: none;
-}
+
 
 
 
