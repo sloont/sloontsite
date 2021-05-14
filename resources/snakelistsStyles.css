@@ -531,7 +531,7 @@ main {
     #game {
     
         position: relative;
-        border: 1px solid #edf0f1;
+        border: 2px solid #edf0f1;
         background: #24252a;
        
         height: 658px;
