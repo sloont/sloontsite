@@ -86,7 +86,7 @@ playBtn.addEventListener("click", () => {
         removeClick(resetBtn);
         removeClick(gridlinesBtn);
 
-        resetGame();
+        
         const game = new Game(new Snake());
         disableButton(resetBtn);
         disableButton(gridlinesBtn);
@@ -107,6 +107,7 @@ resetBtn.addEventListener("click", () => {
         enableButton(gridlinesBtn);
         disableButton(resetBtn);
         document.getElementById("score-points").textContent = 0;
+        resetGame();
     }
 });
 
@@ -120,7 +121,8 @@ const checkForClicked = (link) => {
     }
 };
 
-const removeClick = (link) => {
+const removeClick = (link) => {             //do we need this anymore?
+
     link.classList.remove("recentClick");
 };
 

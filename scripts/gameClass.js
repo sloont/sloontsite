@@ -27,7 +27,7 @@ class Game {
                 let snakePiece = document.getElementById("x" + coord.x + "y" + coord.y);
 
                 snakePiece.classList.add("snake");
-                snakePiece.classList.remove(snakePiece.classList.item(2)); //we really only need this for i = 57 but browser should ignore after
+                snakePiece.classList.remove(snakePiece.classList.item(2)); //this could be causing the bug with food being placed in the body of the snake
                 snakePiece.classList.add("green-snake");
                 
             }
@@ -168,9 +168,11 @@ class Game {
 
         //if the next pixel is food
         if (nextPixel.classList.contains("food")) {
-            
+
+            //think the order of these two method calls is causing the occasional food bug
+            this.placeFood(); 
             this.growSnake(next);
-            this.placeFood();
+            
             this.updateScore();
 
         } else if (nextPixel.classList.contains("snake")) {
