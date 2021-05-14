@@ -351,7 +351,174 @@ main {
 /*CONTROLS*/
 
 #controls {
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: start ;
     grid-area: controls;
+}
+
+/*list styles*/
+#snake-nav {
+    margin:0;
+    padding:0;
+    text-align: start;
+}
+
+#snake-nav ul {
+    list-style: none;
+    padding-inline-start: 0px;
+    
+}
+
+#snake-nav li {
+    display: inline-block;
+}
+
+/*button styling*/
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+   
+    margin-top: 13px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    
+}
+
+.bottom {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 7.125em;
+    height: 3.125em;
+    background-color: rgba(0,136,169,1);
+    display: block;
+
+   
+}
+
+.top {
+    
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 7em;
+    height: 3em;
+    background: none;
+    border: 2px solid #edf0f1;
+
+    
+    
+}
+
+.label {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 600;
+    color: #edf0f1;
+    font-size: 1rem;
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    background: none;
+
+    padding: 1em;
+
+}
+    
+
+.button:hover .bottom {
+    left: 0;
+    top: 0;
+    background-color: #edf0f1;
+    -webkit-transition: all .20s ease-out;
+    -moz-transition: all .20s ease-out;
+    -o-transition: all .20s ease-out;
+    transition: all .20s ease-out;
+}
+
+.button:hover .label {
+    color: rgba(0,136,169,1);
+    -webkit-transition: all .20s ease-out;
+    -moz-transition: all .20s ease-out;
+    -o-transition: all .20s ease-out;
+    transition: all .20s ease-out;
+}
+
+.button-border {
+    position: absolute;
+    background-color: rgba(0,136,169,1);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+}
+
+.button:hover .button-border-left, .button:hover .button-border-right {
+    height: calc(100% + 2px);
+}
+
+.button:hover .button-border-top, .button:hover .button-border-bottom {
+    width: calc(100% + 2px);
+}
+
+.button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+}
+
+.button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+}
+
+.button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0px;
+    height: 2px;
+}
+
+.button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+}
+
+/*class for if the button was the most recent click*/
+
+.recentClick .bottom{
+    left: 0;
+    top: 0;
+    background-color: #edf0f1;
+}
+
+.recentClick .label {
+    color: rgba(0,136,169,1);
+}
+
+.recentClick .button-border {
+    background-color: rgba(0,136,169,1);
+}
+
+.recentClick .button-border-bottom, .recentClick .button-border-top {
+    width: calc(100% + 2px);
+}
+
+.recentClick .button-border-right, .recentClick .button-border-left {
+    height: calc(100% + 2px);
+}
+
+/*disable button*/
+
+.disabled .bottom {
+    background-color: rgba(0,136,169,0.5) !important;
 }

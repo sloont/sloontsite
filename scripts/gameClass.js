@@ -131,7 +131,8 @@ class Game {
         setTimeout(() => {
             const gameOver = document.getElementById("game-over");
             gameOver.classList.add("visible");
-            document.getElementById("resetBtn").disabled = false;
+            document.getElementById("reset-btn").className = "button";
+            
         }, 800)
 
         this.gameover = true;
