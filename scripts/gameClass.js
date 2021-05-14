@@ -65,7 +65,7 @@ class Game {
             coord = this.randomCoord();
             food = document.getElementById("x" + coord.x + "y" + coord.y);
         
-        } while (food.classList.contains("snake") || (coord.x == 14 && coord.y == 11));
+        } while (food.classList.contains("snake"));
         
         food.classList.add("food");
     }
@@ -224,8 +224,8 @@ class Game {
         this.gameover = false;
         
         this.createSnake();
-        this.placeFood();
         this.displaySnake();
+        this.placeFood();
 
         document.addEventListener("keydown", this.listener);
 
