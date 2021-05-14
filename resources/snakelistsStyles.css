@@ -331,6 +331,7 @@ main {
 
 #score {
     text-align: end;
+    margin-right: 1em;
     grid-area: score;
 }
 
